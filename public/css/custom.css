@@ -1,0 +1,29 @@
+.input-group {
+  width: 30rem;
+}
+@media screen and (max-width: 480px) {
+  .input-group {
+    width: 100%;
+  }
+}
+label.custom-file-upload {
+  width: 100%;
+}
+.input-group-prepend {
+  margin: -5px 0px 3px 0px;
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+}
+#table-div {
+    width: 30rem;
+}
+#download-text {
+  display: none;
+}

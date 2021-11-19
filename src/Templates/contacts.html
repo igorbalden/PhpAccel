@@ -1,0 +1,20 @@
+{% extends "layout/default.html" %}
+{% block content %}
+
+<h2 class="mt-5">Contacts from DB</h2>
+
+  {# r|json_encode(JSON_PRETTY_PRINT) #}
+  <div class="table table-responsive">
+    <table>
+      <tbody>
+        {% for r in contacts_arr %}
+          <tr>
+            <td>{{ r.id }}</td><td>{{ r.email }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{{ contacts }}
+
+{% endblock %}

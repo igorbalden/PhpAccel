@@ -1,0 +1,10 @@
+.env
+!.env.keep
+
+/logs/*
+!/logs/index.php
+
+/vendor
+
+.phpunit.result.cache
+

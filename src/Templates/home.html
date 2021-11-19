@@ -1,0 +1,20 @@
+{% extends "layout/default.html" %}
+{% block content %}
+
+  <h1 class="mt-5">PhpAccel</h1>
+  <h3>Php Api Starter</h3>
+  <div class="form-group mt-4 w-50">
+    {% if login_arr.error %}
+      <div class="alert alert-danger">{{ login_arr.error }}</div>
+    {% endif %}
+    {% if login_arr.msg %}
+      <div class="alert alert-info">{{ login_arr.msg }}</div>
+    {% endif %}
+  </div>
+
+  <div>
+    <p>{{ hereVar }}</p>
+  </div>
+  {# dump(_self, _charset) #}
+
+{% endblock %}

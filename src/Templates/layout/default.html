@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, 
+      initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>PhpAccel</title>
+
+    <!-- Bootstrap core CSS -->
+    <base href="{{ constant('BASE_URL') }}">
+    <link href="css/bootstrap-4.5.2.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <script>
+      const BaseUrl = document.querySelector('base').getAttribute('href');
+    </script>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap-4.5.2.min.js"></script>
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="{{ constant('BASE_URL') }}" id="home">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+          data-target="#navbarCollapse" aria-controls="navbarCollapse" 
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" id="contacts">
+              <a class="nav-link" href="contacts">Contacts</a>
+            </li>
+            <li class="nav-item" id="show">
+              <a class="nav-link" href="api/show/Validation">Api-UrlArgs</a>
+            </li>
+            <li class="nav-item" id="login">
+              <a class="nav-link" href="admin/login">Login</a>
+            </li>
+            {% if session.user_group == 'admin' %}
+              <li class="nav-item" id="dashboard">
+                <a class="nav-link" href="admin/">Dashboard</a>
+              </li>
+            {% endif %}
+            {% if session.user_id %}
+              <li class="nav-item" id="logout">
+                <a class="nav-link" href="admin/logout">Logout</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-shrink-0">
+      <div class="container">
+
+        <!-- CONTENT -->
+        {% block content %}{% endblock %}
+
+      </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span class="text-muted">PhpAccel</span>
+      </div>
+    </footer>
+
+    <div id="cModal" class="modal">
+      <div class="modal-body">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div id="modal-content" class="modal-content p-4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(window).on('load', () => {
+      });
+    </script>
+  </body>
+</html>

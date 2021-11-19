@@ -1,0 +1,22 @@
+#
+# Phpstan runs with '$ ./vendor/bin/phpstan' in the command line
+#
+
+parameters:
+  checkMissingIterableValueType: false
+  paths:
+    - src
+    - tests
+  ignoreErrors:
+    - message: ~Constant ROOT_PATH not found~
+      path: *
+    - message: ~Constant BASE_URL not found~
+      path: *
+    - message: ~.*ServerRequestInterface::\$pipedVar~
+      path: *
+    - message: ~Variable \$router might not be defined~
+      path: %currentWorkingDirectory%/src/Routes/*
+    - message: ~typehint specified~
+      path: *
+  level: 6
+

@@ -1,0 +1,36 @@
+{% extends "layout/default.html" %}
+{% block content %}
+
+<h2 class="mt-5">ADMIN DASHBOARD</h2>
+
+{# u|json_encode(JSON_PRETTY_PRINT) #}
+<div class="table table-responsive">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th><th>email</th><th>group</th><th>status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for u in users_arr %}
+        <tr>
+          <td>{{ u.id }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.descr }}</td>
+          <td>
+            {% if u.active is same as('1') %}active
+            {% endif %}
+            {% if u.active is same as('0') %}inactive
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <pre>{{ hereVar }}</pre>
+</div>
+
+{% endblock %}

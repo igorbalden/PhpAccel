@@ -1,0 +1,46 @@
+{% extends "layout/default.html" %}
+{% block content %}
+
+<div class="container col-md-6">
+  <form action="admin/login-post" method="post" novalidate onsubmit="">
+    <div class="form-group mt-4">
+      <div class="mt-4 alert alert-secondary">
+        Exist: admin@demo.com, and user1@demo.com.
+        Password '1234'.
+      </div>
+      <h3>User Login</h3>
+      {% if login_arr.error %}
+        <div class="alert alert-danger">{{ login_arr.error }}</div>
+      {% endif %}
+      {% if login_arr.msg %}
+        <div class="alert alert-info">{{ login_arr.msg }}</div>
+      {% endif %}
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" name="email" class="form-control" 
+        id="email" value="admin@demo.com"/>
+      <span id="email_err" class="form-text text-warning"></span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" class="form-control" 
+        id="password" value="1234"/>
+      <span id="password_err" class="form-text text-warning"></span>
+    </div>
+    <button type="submit" class="btn btn-primary" onclick=""
+      >Submit</button>
+    <span id="form_err" class="form-text text-warning"></span>
+  </form>
+  <div class="mt-3">
+    No account? <a href="admin/register" >Register</a>
+  </div>
+</div>
+
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+});
+</script>
+
+{% endblock %}
+

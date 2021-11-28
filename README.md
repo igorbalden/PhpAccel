@@ -46,3 +46,4 @@ This demo includes user register and login functionality, and protected Api rout
 The code has been built to show how the different components work together rather,  
 than building a complete user management system.  
 
+More in **/docs**  
